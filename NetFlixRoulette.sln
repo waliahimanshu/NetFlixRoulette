@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roulette.Console", "Roulette.Console.csproj", "{3D5BB021-69DC-492F-A66D-759BC6EF4769}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roulette.Console", "Src\Roulette.Console.csproj", "{3D5BB021-69DC-492F-A66D-759BC6EF4769}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F8390EC4-B36A-4ABA-8974-C21C5D9EDBBE}"
 EndProject
