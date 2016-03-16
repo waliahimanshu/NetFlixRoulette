@@ -1,6 +1,0 @@
-C:\Users\himanshuw\Documents\GitHub\NetFlixRoulette\bin\Debug\NetFlixRoulette.exe.config
-C:\Users\himanshuw\Documents\GitHub\NetFlixRoulette\bin\Debug\NetFlixRoulette.exe
-C:\Users\himanshuw\Documents\GitHub\NetFlixRoulette\bin\Debug\NetFlixRoulette.pdb
-C:\Users\himanshuw\Documents\GitHub\NetFlixRoulette\obj\Debug\NetFlixRoulette.csprojResolveAssemblyReference.cache
-C:\Users\himanshuw\Documents\GitHub\NetFlixRoulette\obj\Debug\NetFlixRoulette.exe
-C:\Users\himanshuw\Documents\GitHub\NetFlixRoulette\obj\Debug\NetFlixRoulette.pdb
