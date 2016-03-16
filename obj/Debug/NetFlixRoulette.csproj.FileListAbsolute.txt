@@ -1,0 +1,12 @@
+\\Mac\Home\Documents\Visual Studio 2015\Projects\the-snow-leopard\NetFlixRoulette\NetFlixRoulette\bin\Debug\NetFlixRoulette.exe.config
+\\Mac\Home\Documents\Visual Studio 2015\Projects\the-snow-leopard\NetFlixRoulette\NetFlixRoulette\bin\Debug\NetFlixRoulette.exe
+\\Mac\Home\Documents\Visual Studio 2015\Projects\the-snow-leopard\NetFlixRoulette\NetFlixRoulette\bin\Debug\NetFlixRoulette.pdb
+\\Mac\Home\Documents\Visual Studio 2015\Projects\the-snow-leopard\NetFlixRoulette\NetFlixRoulette\obj\Debug\NetFlixRoulette.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\Visual Studio 2015\Projects\the-snow-leopard\NetFlixRoulette\NetFlixRoulette\obj\Debug\NetFlixRoulette.exe
+\\Mac\Home\Documents\Visual Studio 2015\Projects\the-snow-leopard\NetFlixRoulette\NetFlixRoulette\obj\Debug\NetFlixRoulette.pdb
+\\Mac\Home\Documents\Visual Studio 2015\Projects\NetFlixRoulette\NetFlixRoulette\bin\Debug\NetFlixRoulette.exe.config
+\\Mac\Home\Documents\Visual Studio 2015\Projects\NetFlixRoulette\NetFlixRoulette\obj\Debug\NetFlixRoulette.exe
+\\Mac\Home\Documents\Visual Studio 2015\Projects\NetFlixRoulette\NetFlixRoulette\obj\Debug\NetFlixRoulette.pdb
+\\Mac\Home\Documents\Visual Studio 2015\Projects\NetFlixRoulette\NetFlixRoulette\bin\Debug\NetFlixRoulette.exe
+\\Mac\Home\Documents\Visual Studio 2015\Projects\NetFlixRoulette\NetFlixRoulette\bin\Debug\NetFlixRoulette.pdb
+\\Mac\Home\Documents\Visual Studio 2015\Projects\NetFlixRoulette\NetFlixRoulette\obj\Debug\NetFlixRoulette.csprojResolveAssemblyReference.cache
