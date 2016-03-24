@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using NetFlixRoulette.Contract;
 using Newtonsoft.Json;
@@ -19,20 +20,23 @@ namespace NetFlixRoulette
 
         public IEnumerable<ResponseObject> GetResults()
             {
-            var path = $"?actor={_settings.ActorName}";
-
-            var httpRequestMessage = CreateRequest(path);
+            var httpRequestMessage = CreateRequest();
 
             var responseMessage = _httpClient.SendAsync(httpRequestMessage);
 
-            responseMessage.Result.EnsureSuccessStatusCode();
+            string httpResponseMessage = null;
 
-            var httpResponseMessage = responseMessage.Result.Content.ReadAsStringAsync().Result;
-
-            Console.WriteLine(httpResponseMessage);
-
-            Console.ReadLine();
-
+            if (responseMessage.Result.IsSuccessStatusCode)
+                {
+                httpResponseMessage = responseMessage.Result.Content.ReadAsStringAsync().Result;
+                Console.WriteLine(httpResponseMessage);
+                }
+            else
+                {
+                httpResponseMessage = responseMessage.Result.Content.ReadAsStringAsync().Result;
+                Console.WriteLine(JsonConvert.DeserializeObject(httpResponseMessage));
+                return Enumerable.Empty<ResponseObject>();
+            }
             return GetResponse(httpResponseMessage);
             }
 
@@ -41,8 +45,10 @@ namespace NetFlixRoulette
             return JsonConvert.DeserializeObject<IEnumerable<ResponseObject>>(httpResponseMessage);
             }
 
-        private static HttpRequestMessage CreateRequest(string path)
+        private HttpRequestMessage CreateRequest()
             {
+            var path = $"?actor={_settings.ActorName}";
+
             var httpRequestMessage = new HttpRequestMessage
                 {
                 RequestUri = new Uri(path, UriKind.Relative),

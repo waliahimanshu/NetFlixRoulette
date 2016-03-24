@@ -84,6 +84,7 @@
     <Compile Include="ContainerFactory.cs" />
     <Compile Include="IProxy.cs" />
     <Compile Include="MySettings.cs" />
+    <Compile Include="Orchestrator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Proxy.cs" />
     <Compile Include="Contract\ResponseObject.cs" />
