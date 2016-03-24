@@ -1,20 +1,55 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using NetFlixRoulette.Contract;
+using Newtonsoft.Json;
 
 namespace NetFlixRoulette
-{
-    internal class Proxy : IProxy
     {
-        private MySettings settigs;
-
-        public Proxy(MySettings settigs)
+    public class Proxy : IProxy
         {
-            this.settigs = settigs;
-        }
+        private readonly MySettings _settings;
+        private readonly HttpClient _httpClient;
 
-        public IEnumerable<dynamic> GetResults(string actorsName)
-        {
-            throw new NotImplementedException();
+        public Proxy(MySettings settings, HttpClient httpClient)
+            {
+            _settings = settings;
+            _httpClient = httpClient;
+            }
+
+        public IEnumerable<ResponseObject> GetResults()
+            {
+            var path = $"?actor={_settings.ActorName}";
+
+            var httpRequestMessage = CreateRequest(path);
+
+            var responseMessage = _httpClient.SendAsync(httpRequestMessage);
+
+            responseMessage.Result.EnsureSuccessStatusCode();
+
+            var httpResponseMessage = responseMessage.Result.Content.ReadAsStringAsync().Result;
+
+            Console.WriteLine(httpResponseMessage);
+
+            Console.ReadLine();
+
+            return GetResponse(httpResponseMessage);
+            }
+
+        private static IEnumerable<ResponseObject> GetResponse(string httpResponseMessage)
+            {
+            return JsonConvert.DeserializeObject<IEnumerable<ResponseObject>>(httpResponseMessage);
+            }
+
+        private static HttpRequestMessage CreateRequest(string path)
+            {
+            var httpRequestMessage = new HttpRequestMessage
+                {
+                RequestUri = new Uri(path, UriKind.Relative),
+                Method = HttpMethod.Get,
+                Headers = { { "X-Mashape-Key", "ux17bI21Xgmshjzt2fXJMih7IiWkp1zjYxBjsnxRny7GbaToXc" }, { "Accept", "application/json" } }
+                };
+            return httpRequestMessage;
+            }
         }
     }
-}

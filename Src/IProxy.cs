@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using NetFlixRoulette.Contract;
 
 namespace NetFlixRoulette
 {
     internal interface IProxy
     {
-        IEnumerable<dynamic> GetResults(string actorsName);
+       IEnumerable<ResponseObject> GetResults();
     }
 }

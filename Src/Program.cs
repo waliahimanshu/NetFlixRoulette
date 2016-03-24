@@ -1,23 +1,18 @@
 ﻿using System;
-using System.Linq;
 
 namespace NetFlixRoulette
-{
-    public static class Program
     {
-        public static void Main(string[] args)
+    public static class Program
         {
-            if (args == null || string.IsNullOrWhiteSpace(args.First()))
+        public static void Main(string[] args)
             {
-                throw new InvalidOperationException("Provide at least one paramater");
-            }
+            var input = Console.ReadLine();
 
-            var settigs = new MySettings
+            if (input == null || string.IsNullOrWhiteSpace(input))
                 {
-                    ActorName = args.First()
-                };
-
-            new Proxy(settigs);
+                throw new InvalidOperationException("Provide at least one parameter");
+                }
+            ContainerFactory.Create(input);
+            }
         }
     }
-}

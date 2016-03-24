@@ -1,11 +1,7 @@
 ﻿namespace NetFlixRoulette
-{
-    internal class MySettings
     {
-        public MySettings()
+    public class MySettings
         {
+        public string ActorName { get; set; }
         }
-
-        public string ActorName { get; internal set; }
     }
-}
