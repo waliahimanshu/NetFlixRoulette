@@ -5,6 +5,6 @@ namespace NetFlixRoulette
 {
     public interface IProxy
     {
-       IEnumerable<ResponseObject> GetResults();
+       IEnumerable<ResponseObject> GetResults(string name);
     }
 }

@@ -1,30 +1,48 @@
-﻿using System;
-using System.Linq;
-using Autofac;
-using Autofac.Core.Lifetime;
-using NetFlixRoulette.Contract;
+﻿using Autofac;
+using Topshelf;
 
 namespace NetFlixRoulette
-    {
+{
     public static class Program
-        {
-
+    {
         public static void Main(string[] args)
+        {
+            //            var name = TakeInput();
+            //            new Validator().Validate(name);
+            //            IApplication orchestrator = new Application();
+            //            orchestrator.Run(name);
+            //            Console.ReadLine();
+
+            var container = ContainerFactory.Create();
+            using (var scope = container.BeginLifetimeScope())
             {
-            var input = Console.ReadLine();
+                var app = scope.Resolve<IApplication>();
+                var name = app.Run();
+                app.GetResultFor(name);
+            }
+        }
 
-            if (string.IsNullOrWhiteSpace(input))
+        private static IContainer IntializeContainer()
+        {
+            var container = ContainerFactory.Create();
+            return container;
+        }
+
+        
+
+        private static void TopShelf()
+        {
+            HostFactory.Run(x =>
+            {
+                x.Service<Roullete>(y =>
                 {
-                throw new InvalidOperationException("Provide at least one parameter");
-                }
-
-            var container = ContainerFactory.Create(input);
-
-            var proxy = container.Resolve<Proxy>();
-
-            var orchestrator = new Orchestrator(proxy);
-
-            orchestrator.Orchestrate();
-           }
+                    y.ConstructUsing(name => new Roullete());
+                    y.WhenStarted(r => r.Start());
+                    y.WhenStopped(r => r.Stop());
+                });
+                x.SetServiceName("Roullete api");
+                x.AddCommandLineDefinition("Actor Name", s => { });
+            });
         }
     }
+}
