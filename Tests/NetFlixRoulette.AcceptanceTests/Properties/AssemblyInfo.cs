@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("NetFlixRoulette.AcceptanceTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("TheTrainline.com")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("NetFlixRoulette.AcceptanceTests")]
-[assembly: AssemblyCopyright("Copyright © TheTrainline.com 2016")]
+[assembly: AssemblyCopyright("2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
