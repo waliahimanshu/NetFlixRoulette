@@ -1,8 +1,8 @@
 # NetFlixRoulette
 
+Self hosted Webapp as windows service, recommends random movies.
 
-
-Tips:
+Tip:
 To create a git repo from a CLI
 
 curl -u 'user' https://api.github.com/user/repos -d '{"name":"repoName","description":"This is a repo created via CLI"}'
